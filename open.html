@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>A Masterpiece for Sundas Wazir ✨</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,900;1,900&family=Plus+Jakarta+Sans:wght@300;800&display=swap');
+
+        :root {
+            --primary: #fb7185; 
+            --secondary: #8b5cf6;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #020617;
+            overflow: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            touch-action: none;
+        }
+
+        .bg-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
+            z-index: -1;
+        }
+
+        .blob {
+            position: absolute;
+            width: 70vw;
+            height: 70vw;
+            max-width: 600px;
+            max-height: 600px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            filter: blur(100px);
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: move 25s infinite alternate ease-in-out;
+        }
+
+        @keyframes move {
+            from { transform: translate(-20%, -20%) scale(1); }
+            to { transform: translate(20%, 20%) scale(1.15); }
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 100;
+        }
+
+        .name-text {
+            background: linear-gradient(to bottom, #fff, #ffe4e6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 25px rgba(251, 113, 133, 0.4));
+            animation: float-name 6s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes float-name {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .premium-btn {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+        }
+
+        .premium-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 0 30px rgba(251, 113, 133, 0.2);
+        }
+
+        #main-stage {
+            display: none;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+
+        .reveal {
+            display: flex !important;
+            opacity: 1 !important;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 640px) {
+            .name-text { font-size: 3.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-mesh">
+        <div class="blob" style="top: 0%; left: -10%;"></div>
+        <div class="blob" style="bottom: 0%; right: -10%; animation-delay: -5s;"></div>
+    </div>
+
+    <!-- Intro Stage -->
+    <div id="intro-stage" class="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#020617] p-8 text-center">
+        <div class="relative mb-12">
+            <div class="absolute inset-0 bg-rose-500 blur-[80px] opacity-20 animate-pulse"></div>
+            <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border border-white/10 flex items-center justify-center relative bg-slate-900/60 backdrop-blur-3xl">
+                <span class="text-5xl md:text-6xl animate-bounce">✨</span>
+            </div>
+        </div>
+        <h2 class="text-white/40 text-[10px] font-black tracking-[0.6em] uppercase mb-8">A Private Presentation</h2>
+        <button onclick="revealMagic()" class="premium-btn text-white px-10 py-5 rounded-full text-lg font-bold tracking-wider w-full max-w-xs shadow-xl transition-all">
+            Begin Experience
+        </button>
+    </div>
+
+    <!-- Main Magic Stage -->
+    <div id="main-stage" class="fixed inset-0 flex flex-col items-center justify-center z-50 p-6 overflow-hidden">
+        
+        <div class="name-container text-center">
+            <div class="flex items-center justify-center gap-4 mb-4 fade-in-up" style="animation-delay: 0.2s">
+                <div class="h-px w-8 bg-rose-500/50"></div>
+                <p class="text-rose-400 font-bold tracking-[0.5em] uppercase text-[9px]">The Masterpiece Collection</p>
+                <div class="h-px w-8 bg-rose-500/50"></div>
+            </div>
+            
+            <h1 class="name-text text-6xl sm:text-8xl md:text-[9.5rem] font-black leading-tight italic">
+                Sundas Wazir
+            </h1>
+
+            <div class="font-['Dancing_Script'] text-3xl md:text-5xl text-rose-200 mt-4 mb-8 fade-in-up" style="animation-delay: 1s">
+                Pure elegance, pure grace...
+            </div>
+
+            <div class="max-w-md md:max-w-2xl mx-auto space-y-8 fade-in-up" style="animation-delay: 1.6s">
+                <div class="h-px w-full bg-gradient-to-r from-transparent via-rose-500/40 to-transparent"></div>
+                <p class="text-slate-300 text-lg md:text-2xl font-light tracking-wide leading-relaxed px-4">
+                    "Some people make the world better just by being in it. <br class="hidden md:block"/>
+                    <span class="text-white font-bold">Sundas</span>, you are truly one of those people."
+                </p>
+                <div class="flex justify-center items-center gap-6">
+                    <div class="w-12 h-px bg-rose-900/50"></div>
+                    <div class="text-rose-500 animate-pulse text-2xl md:text-3xl">❤</div>
+                    <div class="w-12 h-px bg-rose-900/50"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="mt-12 md:mt-20 p-px bg-gradient-to-br from-white/20 to-transparent rounded-3xl fade-in-up" style="animation-delay: 2.2s">
+            <div class="bg-slate-900/60 backdrop-blur-3xl px-8 py-6 md:px-12 md:py-8 rounded-[1.7rem] border border-white/5 flex flex-row items-center gap-8 md:gap-12">
+                <div class="text-center md:text-left">
+                    <p class="text-[8px] font-black text-rose-500 uppercase tracking-widest mb-1">Status</p>
+                    <p class="text-white font-bold text-sm italic">Legendary Aura</p>
+                </div>
+                <div class="h-8 w-px bg-white/10"></div>
+                <div class="text-center md:text-left">
+                    <p class="text-[8px] font-black text-rose-400 uppercase tracking-widest mb-1">Energy</p>
+                    <p class="text-white font-bold text-sm italic">Radiant Light</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="fixed bottom-8 text-white/10 text-[8px] font-black uppercase tracking-[0.5em] text-center w-full">Touch the screen to spread stardust</p>
+    </div>
+
+    <script>
+        function createParticle(x, y) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            const size = Math.random() * 5 + 2;
+            p.style.width = size + 'px';
+            p.style.height = size + 'px';
+            p.style.background = Math.random() > 0.5 ? '#fb7185' : '#ffffff';
+            p.style.boxShadow = `0 0 10px ${p.style.background}`;
+            p.style.left = x + 'px';
+            p.style.top = y + 'px';
+            document.body.appendChild(p);
+            
+            const anim = p.animate([
+                { transform: 'translate(0,0) scale(1)', opacity: 1 },
+                { transform: `translate(${(Math.random()-0.5)*150}px, ${(Math.random()-0.5)*150}px) scale(0)`, opacity: 0 }
+            ], { 
+                duration: 1000 + Math.random() * 1000,
+                easing: 'ease-out'
+            });
+            
+            anim.onfinish = () => p.remove();
+        }
+
+        window.addEventListener('mousemove', (e) => {
+            if (document.getElementById('main-stage').classList.contains('reveal')) {
+                createParticle(e.clientX, e.clientY);
+            }
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            if (document.getElementById('main-stage').classList.contains('reveal')) {
+                const touch = e.touches[0];
+                createParticle(touch.clientX, touch.clientY);
+            }
+        }, { passive: true });
+
+        function revealMagic() {
+            const intro = document.getElementById('intro-stage');
+            intro.style.transition = 'all 1s ease';
+            intro.style.opacity = '0';
+            intro.style.transform = 'translateY(-20px)';
+            
+            setTimeout(() => {
+                intro.remove();
+                document.getElementById('main-stage').classList.add('reveal');
+                
+                // Opening Burst
+                const cx = window.innerWidth / 2;
+                const cy = window.innerHeight / 2;
+                for(let i=0; i<40; i++) {
+                    setTimeout(() => createParticle(cx + (Math.random()-0.5)*200, cy + (Math.random()-0.5)*200), i * 15);
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
